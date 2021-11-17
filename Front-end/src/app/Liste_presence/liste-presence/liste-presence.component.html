@@ -1,0 +1,39 @@
+<app-header></app-header>
+<app-sidemenu></app-sidemenu>
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">ADMINISTRATION</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-8"></div>
+            <div class="col-lg-4 col-md-4">
+                <a (click)="addListe_presence()"><button style="float: right; margin: 10px 10px;" class="btn btn-warning">Créer une liste de presence</button></a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-12" *ngFor="let response of listePresence">
+                <div class="white-box analytics-info">
+                    <ul class="list-inline two-part d-flex align-items-center mb-0">
+                       <a [routerLink]="['listePresenceMonth', response['0']]">
+                        <li class=""><span class="counter text-success">Listes de l'année <b style="color: orange;">{{response}}</b></span></li>
+                       </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- <app-footer></app-footer> -->
+</div>
